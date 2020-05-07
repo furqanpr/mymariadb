@@ -1,5 +1,4 @@
 #!/bin/bash
-# Nothing to update
 
 set -eo pipefail
 shopt -s nullglob
