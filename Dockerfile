@@ -119,8 +119,8 @@ RUN set -ex; \
 VOLUME /var/lib/mysql
 
 ADD https://github.com/furqanpr/mymariadb/blob/master/docker-entrypoint.sh /usr/local/bin/
-RUN chmod 775 /usr/local/bin/docker-entrypoint.sh; \
-    ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
+RUN ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 3306
