@@ -119,7 +119,7 @@ RUN set -ex; \
 VOLUME /var/lib/mysql
 
 ADD https://raw.githubusercontent.com/furqanpr/mymariadb/master/docker-entrypoint.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh; \ 
+RUN chmod 775 /usr/local/bin/docker-entrypoint.sh; \ 
     ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
 ENTRYPOINT ["docker-entrypoint.sh"]
 
